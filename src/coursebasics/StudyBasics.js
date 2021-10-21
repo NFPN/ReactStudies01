@@ -97,7 +97,7 @@ const newArray = [...oldArray,1,2];
 const newObject = {...oldObject, newProp:5};
 
 //Rest
-function SortArgs (...args)//...args is an array
+function SortArgs (...args)//...args is any array
 { 
   return args.sort(); 
 }
