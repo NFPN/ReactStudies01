@@ -1,6 +1,8 @@
-import ExpenseLoader from "./components/ExpensesLoader";
+import ExpenseLoader from "./components/Expenses/ExpensesLoader";
 
-function App() {
+
+
+const App = () => { // same as "function app()"
   const expenses = [
     {
       id: "e1",
