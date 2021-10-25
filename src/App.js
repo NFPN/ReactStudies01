@@ -1,8 +1,8 @@
 import ExpenseLoader from "./components/Expenses/ExpensesLoader";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-
-
-const App = () => { // same as "function app()"
+const App = () => {
+  // same as "function app()"
   const expenses = [
     {
       id: "e1",
@@ -30,7 +30,12 @@ const App = () => { // same as "function app()"
     },
   ];
 
-  return <ExpenseLoader expenses={expenses} />;
-}
+  return (
+    <div>
+      <NewExpense />
+      <ExpenseLoader expenses={expenses} />
+    </div>
+  );
+};
 
 export default App;
