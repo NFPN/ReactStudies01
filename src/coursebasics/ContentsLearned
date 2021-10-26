@@ -10,3 +10,5 @@ Working with Data
 Handling Events
 Updating the UI & working with "State"
 A closer look at Components & State
+Two way binding
+Child-to-Parent component comunication
