@@ -32,9 +32,9 @@ function ExpenseForm(props) {
   //     });
   //   };
 
-  const [title, setTitle] = useState();
-  const [amount, setAmount] = useState();
-  const [date, setDate] = useState();
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
@@ -47,18 +47,18 @@ function ExpenseForm(props) {
   };
 
   const submitHandler = (event) => {
-      event.preventDefault();
+    event.preventDefault();
 
-      const expenseData = {
-          title: title,
-          amount: amount,
-          date: new Date(date),
-      }
-      
-      props.onSaveExpenseData(expenseData);
-      setTitle('');
-      setAmount('');
-      setDate('');
+    const expenseData = {
+      title: title,
+      amount: amount,
+      date: new Date(date),
+    };
+
+    props.onSaveExpenseData(expenseData);
+    setTitle("");
+    setAmount("");
+    setDate("");
   };
 
   return (
@@ -66,7 +66,11 @@ function ExpenseForm(props) {
       <div className="new-expense-controls">
         <div className="new-expense-control">
           <label>Title</label>
-          <input type="text" value={title} onChange={titleChangeHandler}></input>
+          <input
+            type="text"
+            value={title}
+            onChange={titleChangeHandler}
+          ></input>
         </div>
         <div className="new-expense-control">
           <label>Amount</label>
