@@ -1,8 +1,12 @@
 # ReactStudies
 Project done following a Udemy React guide course.
 
- - React basics and working with components
+ - Content 
+    - Reactjs
     - Hooks
-    - React Router
     - Redux
+    - React Routing
+    - Animations
+    - Next.js
+    - Testing
 

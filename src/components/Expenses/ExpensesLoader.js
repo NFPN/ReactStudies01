@@ -3,6 +3,7 @@ import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "./ExpensesFilter";
 import React, { useState } from "react";
 import "./ExpensesLoader.css";
+import ExpensesList from "./ExpensesList";
 
 function ExpenseLoader(props) {
   const [selectedYear, setExpensesyear] = useState("2021");
@@ -11,6 +12,10 @@ function ExpenseLoader(props) {
     setExpensesyear(yearData);
   };
 
+  const filteredExpenses = props.expenses.filter(
+    (e) => e.date.getFullYear().toString() === selectedYear
+  );
+
   return (
     <div>
       <Card className="expenses-loader">
@@ -18,17 +23,7 @@ function ExpenseLoader(props) {
           selected={selectedYear}
           onFilterChanged={filterChangedHandler}
         />
-
-        {props.expenses
-          .filter((e) => e.date.getFullYear().toString() === selectedYear)
-          .map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))}
+        <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
   );

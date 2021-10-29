@@ -4,7 +4,6 @@ import "./ExpensesFilter.css";
 
 function ExpensesFilter(props) {
   const filterHandler = (event) => {
-    event.preventDefault();
     props.onFilterChanged(event.target.value);
   };
 

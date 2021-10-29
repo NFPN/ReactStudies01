@@ -6,15 +6,17 @@ import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
   return (
-    <Card className="expense-item">
-      <ExpanseDate date={props.date} />
-      <div className="expense-item-description">
-        <h2>{props.title}</h2>
-        <div className="expense-item-price">
-          ${Number(props.amount).toLocaleString()}
+    <li>
+      <Card className="expense-item">
+        <ExpanseDate date={props.date} />
+        <div className="expense-item-description">
+          <h2>{props.title}</h2>
+          <div className="expense-item-price">
+            ${Number(props.amount).toLocaleString()}
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </li>
   );
 }
 
