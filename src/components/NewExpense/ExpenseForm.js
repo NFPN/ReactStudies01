@@ -3,38 +3,10 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm(props) {
-  //   const [userInput, setUserInput] = useState({
-  //     title: "",
-  //     amount: "",
-  //     date: "",
-  //   });
-
-  //   const titleChangeHandler = (event) => {
-  //     //this approach could get previous outdate states
-  //     // setUserInput({
-  //     //   ...userInput,
-  //     //   title: event.target.value,
-  //     // });
-
-  //     //this approach always get an updated state
-  //     setUserInput((prevState) => {
-  //       return { ...prevState, title: event.target.value };
-  //     });
-  //   };
-  //   const amountChangeHandler = (event) => {
-  //     setUserInput((prevState) => {
-  //       return { ...prevState, title: event.target.value };
-  //     });
-  //   };
-  //   const dateChangeHandler = (event) => {
-  //     setUserInput((prevState) => {
-  //       return { ...prevState, title: event.target.value };
-  //     });
-  //   };
-
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
+  const [expenseControl, setExpenseControl] = useState(true);
 
   const titleChangeHandler = (event) => {
     setTitle(event.target.value);
@@ -44,6 +16,9 @@ function ExpenseForm(props) {
   };
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
+  };
+  const expenseControlHandler = () => {
+    setExpenseControl(!expenseControl);
   };
 
   const submitHandler = (event) => {
@@ -60,6 +35,13 @@ function ExpenseForm(props) {
     setAmount("");
     setDate("");
   };
+
+  if (expenseControl)
+    return (
+      <div className="new-expense-control">
+        <button onClick={expenseControlHandler}>Add new expense</button>
+      </div>
+    );
 
   return (
     <form onSubmit={submitHandler}>
@@ -94,6 +76,7 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense-actions">
+        <button onClick={expenseControlHandler}>Cancel</button>
         <button type="submit">Add expense</button>
       </div>
     </form>
