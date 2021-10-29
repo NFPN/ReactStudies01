@@ -12,7 +12,7 @@ function ExpenseItem(props) {
         <div className="expense-item-description">
           <h2>{props.title}</h2>
           <div className="expense-item-price">
-            ${Number(props.amount).toLocaleString()}
+            ${Number(props.amount).toFixed(2)}
           </div>
         </div>
       </Card>

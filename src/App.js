@@ -6,7 +6,7 @@ const mockExpenses = [
   {
     id: "e1",
     title: "Toilet Paper",
-    amount: 94.12,
+    amount: 949.12,
     date: new Date(2020, 7, 14),
   },
   {
