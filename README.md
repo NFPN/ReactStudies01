@@ -1,7 +1,7 @@
-# ReactStudies
-Project done following a Udemy React guide course.
+# ReactStudies - 01
+Project done following a React guide course.
 
- - Content 
+ - Content (all react studies ) 
     - Reactjs
     - Hooks
     - Redux
